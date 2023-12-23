@@ -1,11 +1,11 @@
-import { createTheme, Palette, PaletteOptions } from '@mui/material/styles';
-import palette from './palette';
-import functions from './functions';
-import breakpoints from './breakpoints';
+import { createTheme, Palette } from '@mui/material/styles';
+import borders from './borders';
 import boxShadows from './box-shadows';
-import shadowsTheme from './shadows';
-import typography from './typography';
+import breakpoints from './breakpoints';
+import functions from './functions';
 import overrides from './overrides';
+import palette from './palette';
+import typography from './typography';
 declare module '@mui/material/styles' {
    interface Theme {
       borders: {
@@ -652,23 +652,14 @@ declare module '@mui/material/styles' {
       };
    }
 }
-console.log({ overrides });
 const theme = createTheme({
    palette: palette('light'),
-
+   borders: borders(palette('light') as Palette),
    functions,
    breakpoints,
    boxShadows: boxShadows(palette('light') as Palette),
    // shadows: shadowsTheme(palette('light') as PaletteOptions),
    typography,
-   components: {
-      MuiButton: {
-         styleOverrides: {
-            root: {
-               backgroundColor: 'green',
-            },
-         },
-      },
-   },
+   components: overrides,
 });
 export default theme;
