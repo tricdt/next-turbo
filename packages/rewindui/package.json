@@ -1,0 +1,60 @@
+{
+   "name": "rewindui",
+   "description": "A React component library for building modern web applications using Tailwind CSS.",
+   "version": "0.0.1",
+   "license": "MIT",
+   "author": {
+      "name": "Nick Dunas",
+      "email": "nick.dunas@gmail.com"
+   },
+   "homepage": "https://rewind-ui.dev/",
+   "repository": {
+      "url": "https://github.com/rewindui/rewindui.git",
+      "type": "git",
+      "directory": "packages/core"
+   },
+   "bugs": {
+      "url": "https://github.com/rewindui/rewindui/issues"
+   },
+   "keywords": [
+      "react",
+      "reactjs",
+      "tailwind",
+      "tailwindcss",
+      "nextjs",
+      "components",
+      "ui-kit"
+   ],
+   "main": "dist/index.cjs",
+   "module": "dist/index.js",
+   "types": "dist/index.d.ts",
+   "sideEffects": false,
+   "files": [
+      "dist/**",
+      "README.md"
+   ],
+   "private": true,
+   "scripts": {
+      "prebuild": "rm -rf dist",
+      "build": "rollup -c rollup.config.mjs",
+      "dev": "rollup -c rollup.config.mjs --watch",
+      "lint": "eslint \"src/**/*.ts*\"",
+      "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+      "test": "vitest run"
+   },
+   "devDependencies": {
+      "@repo/typescript-config": "^0.0.0",
+      "@rollup/plugin-commonjs": "^25.0.7",
+      "@rollup/plugin-node-resolve": "^15.2.3",
+      "@rollup/plugin-terser": "^0.4.4",
+      "@rollup/plugin-typescript": "^11.1.5",
+      "rollup-plugin-copy": "^3.5.0",
+      "rollup-plugin-peer-deps-external": "^2.2.4",
+      "rollup-plugin-preserve-directives": "^0.2.0",
+      "rollup-plugin-typescript-paths": "^1.5.0",
+      "tsc-alias": "^1.8.8"
+   },
+   "publishConfig": {
+      "access": "public"
+   }
+}

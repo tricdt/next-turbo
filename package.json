@@ -1,24 +1,27 @@
 {
-  "name": "next-turbo",
-  "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "^0.0.0",
-    "prettier": "^3.1.0",
-    "turbo": "latest"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@9.6.7",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+   "name": "next-turbo",
+   "private": true,
+   "scripts": {
+      "build": "turbo build",
+      "dev": "turbo run dev --no-cache --continue",
+      "lint": "turbo lint",
+      "format": "prettier --write \"**/*.{ts,tsx,md}\""
+   },
+   "devDependencies": {
+      "@repo/eslint-config": "*",
+      "@repo/typescript-config": "^0.0.0",
+      "prettier": "^3.1.0",
+      "turbo": "latest"
+   },
+   "engines": {
+      "node": ">=18"
+   },
+   "packageManager": "npm@9.6.7",
+   "workspaces": [
+      "apps/*",
+      "packages/*"
+   ],
+   "dependencies": {
+      "rewindui": "^0.0.1"
+   }
 }
