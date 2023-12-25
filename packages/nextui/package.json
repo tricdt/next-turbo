@@ -1,0 +1,28 @@
+{
+   "name": "@nextui/org",
+   "version": "0.0.1",
+   "private": true,
+   "main": "dist/index.js",
+   "module": "dist/index.js",
+   "types": "dist/index.d.ts",
+   "sideEffects": false,
+   "files": [
+      "dist"
+   ],
+   "publishConfig": {
+      "access": "public"
+   },
+   "scripts": {
+      "build": "tsup src --dts",
+      "dev": "npm run build:fast -- --watch",
+      "clean": "rimraf dist .turbo",
+      "typecheck": "tsc --noEmit",
+      "build:fast": "tsup src",
+      "prepack": "clean-package",
+      "postpack": "clean-package restore"
+   },
+   "type": "module",
+   "devDependencies": {
+      "tsup": "^8.0.1"
+   }
+}

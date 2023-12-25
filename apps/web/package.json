@@ -9,6 +9,7 @@
       "lint": "eslint . --max-warnings 0"
    },
    "dependencies": {
+      "@nextui/org": "^0.0.1",
       "@repo/ui": "*",
       "next": "^14.0.3",
       "react": "^18.2.0",
