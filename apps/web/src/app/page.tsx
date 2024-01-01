@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Card } from '@repo/ui/card';
 import { Code } from '@repo/ui/code';
+import {} from '@salaui/system';
 import styles from './page.module.css';
 import { add } from '@nextui/org';
 function Gradient({

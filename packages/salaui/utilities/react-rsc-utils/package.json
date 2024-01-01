@@ -1,0 +1,58 @@
+{
+   "name": "@salaui/react-rsc-utils",
+   "version": "1.0.0",
+   "description": "A set of utilities for react compatible with RSC",
+   "keywords": [
+      "react-rsc-utils"
+   ],
+   "author": "Tri Nguyen <tricdt@gmail.com>",
+   "homepage": "https://salauiui.org",
+   "license": "MIT",
+   "main": "src/index.ts",
+   "sideEffects": false,
+   "files": [
+      "dist",
+      "children.d.ts",
+      "children.js",
+      "filter-dom-props.d.ts",
+      "filter-dom-props.js"
+   ],
+   "publishConfig": {
+      "access": "public"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/tricdt/salaui.git",
+      "directory": "packages/salaui/utilities/react-rsc-utils"
+   },
+   "bugs": {
+      "url": "https://github.com/tricdt/salaui/issues"
+   },
+   "scripts": {
+      "build": "tsup src --dts",
+      "build:fast": "tsup src",
+      "dev": "npm run build:fast -- --watch",
+      "clean": "rimraf dist .turbo",
+      "typecheck": "tsc --noEmit",
+      "prepack": "clean-package",
+      "postpack": "clean-package restore"
+   },
+   "devDependencies": {
+      "clean-package": "2.2.0"
+   },
+   "clean-package": "../../../clean-package.config.json",
+   "tsup": {
+      "clean": true,
+      "target": "es2019",
+      "format": [
+         "cjs",
+         "esm"
+      ],
+      "banner": {
+         "js": "\"use client\";"
+      }
+   },
+   "dependencies": {
+      "@react-types/shared": "^3.22.0"
+   }
+}

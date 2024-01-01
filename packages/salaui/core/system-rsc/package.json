@@ -1,0 +1,48 @@
+{
+   "name": "@salaui/system-rsc",
+   "version": "1.0.0",
+   "description": "SalaUI system primitives compatibles with RSC imports",
+   "keywords": [
+      "system-rsc"
+   ],
+   "author": "Tri Nguyen <tricdt@gmail.com>",
+   "homepage": "https://salauiui.org",
+   "license": "MIT",
+   "main": "src/index.ts",
+   "sideEffects": false,
+   "files": [
+      "dist"
+   ],
+   "publishConfig": {
+      "access": "public"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/tricdt/salaui.git",
+      "directory": "packages/salaui/core/system-rsc"
+   },
+   "bugs": {
+      "url": "https://github.com/tricdt/salaui/issues"
+   },
+   "scripts": {
+      "build": "tsup src --dts",
+      "build:fast": "tsup src",
+      "dev": "npm run build:fast -- --watch",
+      "clean": "rimraf dist .turbo",
+      "typecheck": "tsc --noEmit",
+      "prepack": "clean-package",
+      "postpack": "clean-package restore"
+   },
+   "devDependencies": {
+      "clean-package": "2.2.0"
+   },
+   "clean-package": "../../../clean-package.config.json",
+   "tsup": {
+      "clean": true,
+      "target": "es2019",
+      "format": [
+         "cjs",
+         "esm"
+      ]
+   }
+}

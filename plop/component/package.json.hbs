@@ -1,0 +1,38 @@
+{
+  "name": "@salaui-org/{{componentName}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "keywords": [
+    "{{componentName}}"
+  ],
+  "author": "Tri Nguyen <tricdt@gmail.com>",
+  "homepage": "https://salaui.org",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tricdt/salaui.git",
+    "directory": "packages/salaui/{{outDir}}/{{componentName}}"
+  },
+  "bugs": {
+    "url": "https://github.com/tricdt/salaui/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "yarn build:fast -- --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+
+  "clean-package": "../../../clean-package.config.json"
+}
